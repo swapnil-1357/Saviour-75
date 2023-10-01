@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+html{
+    transition: 0.1s ease;
+}
+
+/* Navbar Section CSS */
+.btn {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 0.8rem;
+    border: none;
+}
+
+
+.mybutton {
+    outline: 2px solid #49A74C;
+    padding: 0.75rem 1.3rem;
+}
+
+.mybutton:hover {
+    background: #fff;
+    color: #49A74C;
+    transition: 0.23s ease-in-out;
+}
+
+.mybutton span:hover {
+    margin-left: 5px;
+    transition: 0.23s ease-in-out;
+}
+
+.navbar {
+    padding: 1.2rem;
+    background-color: #f7f7f7;
+    font-size: 1.2rem;
+}
+
+.navbar-brand {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.navbar-brand .heading {
+    font-size: 2rem;
+    color: #000;
+    font-weight: 800;
+}
+
+.navbar-brand .logo_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-brand .logo_image img {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.navbar-nav {
+    gap: 1.3rem;
+}
+
+/* Header Section CSS */
+.main_container {
+    display: flex;
+    padding: 4rem;
+    gap: 3rem;
+
+    background: url(./images/wave_navbar.svg);
+    background-size: cover;
+
+    background-position: 0;
+
+    background-blend-mode: soft-light;
+}
+
+.main_container .problem_section {
+    width: 65%;
+    /* border: 2px solid blue; */
+    padding: 1.5rem;
+}
+
+.main_container .problem_section .header_section p {
+    text-align: justify;
+}
+
+.main_container .problem_section .header_section span{
+    color: #fff;
+}
+
+.main_container .sidebar {
+    width: 35%;
+}
+
+
+/* Difficulty Section */
+.diffi_section {
+    margin: 2rem 0;
+}
+
+.diffi_section h2{
+    color: #49A74C;
+}
+
+.diffi_section h2 .med{
+    color: #ffbe0b;
+}
+
+.diffi_section h2 .hard{
+    color: #ff0000;
+}
+
+.diffi_section .accordion {
+    display: flex;
+    flex-direction: column;
+}
+
+.diffi_section .accordion-item {
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    border: none;
+    position: relative;
+    margin: 0.5rem 0;
+}
+
+.diffi_section .accordion-item .accordion-header button {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.diffi_section .accordion-item .accordion-header .easy {
+    color: #fff;
+    border: 3px solid #49A74C;
+    border-radius: 0.5rem;
+
+    background: #49A74C;
+    background: -webkit-linear-gradient(to left, #f0f0f0, #49A74C);
+    background: linear-gradient(to left, #f0f0f0, #49A74C);
+
+    padding: 1.5rem;
+}
+
+.diffi_section .accordion-item .accordion-header .medium {
+    color: #fff;
+    border: 3px solid #ffbe0b;
+    border-radius: 0.5rem;
+
+    background: #ffbe0b;
+    background: -webkit-linear-gradient(to left, #f0f0f0, #ffbe0b);
+    background: linear-gradient(to left, #f0f0f0, #ffbe0b);
+
+    padding: 1.5rem;
+
+}
+
+.diffi_section .accordion-item .accordion-header .hard {
+    color: #fff;
+    border: 3px solid #ff0000;
+    border-radius: 0.5rem;
+
+    background: #ff0000;
+    background: -webkit-linear-gradient(to left, #f0f0f0, #ff0000);
+    background: linear-gradient(to left, #f0f0f0, #ff0000);
+
+    padding: 1.5rem;
+}
+
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .topic_headings{
+    display: flex;
+    justify-content: space-between;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .topic_headings p{
+    border: 2px solid #444;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem{
+    display: flex;
+    justify-content: space-between;
+
+    border-radius: 0.5rem;
+    background: #7fdc82;
+
+    margin: 0.5rem 0;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem div{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .problem_name{
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .problem_info a{
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .action select{
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.3rem;
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+/* Footer section CSS */
+.footer_section {
+    display: flex;
+    justify-content: space-between;
+
+    /* background: #eaf8d3; */
+    background-image: url(./images/wave.svg);
+    background-size: cover;
+    color: #000000;
+
+    padding: 4rem;
+    gap: 3rem;
+}
+
+.footer_section .footer_heading{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 2rem;
+    width: 40%;
+}
+
+.footer_section .footer_heading .footer_heading_image{
+    display: flex;
+    gap: 0.4rem;
+}
+
+.footer_section .footer_heading .footer_heading_content{
+    text-align: justify;
+}
+
+.footer_section .footer_heading .footer_heading_image .image{
+    display: flex;
+}
+
+.footer_section .footer_heading .footer_heading_image .image img{
+    height: 2.5rem;
+    width: 2.5rem;
+
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+
+.footer_section .footer_heading .footer_heading_content h1{
+    /* color: #49A74C; */
+}
+
+.footer_section .footer_shortcuts{
+    width: 30%;
+}
+
+.footer_section .footer_shortcuts .shortcut_links a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.footer_section .footer_shortcuts .shortcut_links{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+
+.footer_section .footer_shortcuts .social_icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 2rem 0;
+}
+
+.footer_section .footer_shortcuts .social_icons .icons{
+    display: flex;
+    gap: 2rem;
+}
+
+.footer_section .footer_shortcuts .social_icons .icons i{
+    font-size: 1.5rem;
+}
+
+.footer_section .footer_shortcuts .copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #444;
+}
