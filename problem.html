@@ -7,7 +7,7 @@
 
     <title>Problems</title>
 
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <link rel="icon" type="image/x-icon" href="/images/title.png">
+    <link rel="icon" type="image/x-icon" href="/images/binary-code.png">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -31,7 +31,7 @@
 <body>
     <!-- NAVBAR SECTION -->
     <div>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg" data-aos="zoom-in">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <div class="logo_image">
@@ -48,13 +48,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./index.html" target="_blank">Home</a>
                         <a class="nav-link" href="#">Features</a>
                         <a class="nav-link" href="#">Pricing</a>
                         <a class="nav-link" aria-disabled="true">Disabled</a>
-                        <button class="btn btn-success" type="submit">
+                        <!-- <button class="btn btn-success" type="submit">
                             Search
-                        </button>
+                        </button> -->
                     </div>
                 </div>
             </div>
@@ -62,17 +62,23 @@
     </div>
 
     <!-- Main Container Section -->
-    <section class="main_container">
+    <section class="main_container" data-aos="zoom-in">
 
         <div class="problem_section">
 
             <!-- Heading Section -->
             <div class="header_section">
-                <h1>Grind 75 Sheet - <span>Top Coding Interview Problems</span></h1>
+                <h1>Saviour 75 Sheet - <span>Top Coding Interview Problems</span></h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, laborum vitae quos cum sapiente minima
                     iure praesentium consequatur architecto quibusdam suscipit ex blanditiis ipsum rem nesciunt enim,
                     labore dolore! Accusamus ducimus harum voluptatem fuga excepturi neque. Architecto, veniam doloribus
                     cumque est non omnis ut magnam, nobis nam accusantium laboriosam velit?
+
+                    <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea veniam consectetur perferendis in laudantium, eum laboriosam obcaecati animi quisquam qui? Officia inventore deleniti consequuntur, illo esse porro illum voluptatem et quod alias aperiam labore amet beatae voluptate, enim in architecto error omnis delectus? Doloremque aspernatur magni officiis sit, nulla alias porro quia eos veniam exercitationem saepe eveniet inventore in a perferendis laudantium quos, placeat nostrum at suscipit! Similique corrupti repudiandae quam, dicta iure ipsa expedita magni, laudantium vitae, provident harum pariatur eligendi accusamus! Mollitia id blanditiis incidunt corrupti laborum quisquam quidem quos vel nihil corporis magni magnam, ipsa vitae nobis.
+
+                    <br><br>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus aliquam fugit natus rem, dolor fuga voluptates atque iusto quisquam harum. Incidunt, quidem vero earum dignissimos exercitationem itaque, illo, explicabo voluptas fuga temporibus officia sint nemo alias quo maxime accusantium. Tenetur quod quam voluptates! Adipisci fugit nulla voluptatum porro sint ullam.
                 </p>
             </div>
 
@@ -83,7 +89,7 @@
 
                 <div class="accordion" id="accordionPanelsStayOpenExample">
 
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="slide-left" data-aos-easing="ease-in-out">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed easy" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
@@ -202,7 +208,7 @@
                         </div>
                     </div>
 
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="slide-left" data-aos-easing="ease-in-out">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed medium" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
@@ -222,7 +228,7 @@
                         </div>
                     </div>
 
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="slide-left" data-aos-easing="ease-in-out">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed hard" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
@@ -258,7 +264,7 @@
 
 
     <!-- Footer Section -->
-    <footer class="footer_section">
+    <footer class="footer_section" data-aos="zoom-out">
 
         <div class="footer_heading">
 
@@ -282,7 +288,7 @@
             <div class="social_icons">
 
                 <div class="follow_us">
-                    <h1>Follow Us</h1>
+                    <h4>Follow Us</h4>
                 </div>
 
                 <div class="icons">
@@ -306,6 +312,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init(
+            {
+                offset:100,
+                duration:1500
+            }
+          );
+        </script>
 </body>
 
 </html>

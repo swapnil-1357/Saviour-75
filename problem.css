@@ -10,6 +10,10 @@ html{
     transition: 0.1s ease;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 /* Navbar Section CSS */
 .btn {
     padding: 0.8rem;
@@ -235,15 +239,15 @@ html{
     background-size: cover;
     color: #000000;
 
-    padding: 4rem;
-    gap: 3rem;
+    padding: 3rem;
+    gap: 2rem;
 }
 
 .footer_section .footer_heading{
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    margin: 2rem;
+    gap: 1rem;
+    margin: 1rem;
     width: 40%;
 }
 
@@ -296,6 +300,10 @@ html{
     flex-direction: column;
 
     margin: 2rem 0;
+}
+
+.footer_section .footer_shortcuts .social_icons .follow_us{
+    font-size: 2;
 }
 
 .footer_section .footer_shortcuts .social_icons .icons{
