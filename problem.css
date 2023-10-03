@@ -2,17 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; 
+    transition: all 0.5s ease;
 }
 
 
-html{
-    transition: 0.1s ease;
-}
+/* html{
+    transition: all 0.1s ease;
+} */
 
-body{
+body {
     overflow-x: hidden;
-}
+  }
 
 /* Navbar Section CSS */
 .btn {
@@ -41,8 +42,8 @@ body{
 
 .navbar {
     padding: 1.2rem;
-    background-color: #f7f7f7;
-    font-size: 1.2rem;
+    background-color: #fff;
+    font-size: 1.3rem;
 }
 
 .navbar-brand {
@@ -52,7 +53,7 @@ body{
 
 .navbar-brand .heading {
     font-size: 2rem;
-    color: #000;
+    color: #49A74C;
     font-weight: 800;
 }
 
@@ -71,28 +72,36 @@ body{
     gap: 1.3rem;
 }
 
+.navbar-expand-lg .navbar-nav i{
+    font-size: 2rem;
+    cursor: pointer;
+    margin: auto;
+    color: #49A74C;
+}
+
 /* Header Section CSS */
 .main_container {
     display: flex;
     padding: 4rem;
     gap: 3rem;
 
-    background: url(./images/wave_navbar.svg);
-    background-size: cover;
+    /* color: #80ffff; */
 
-    background-position: 0;
+    background: linear-gradient(to bottom, #49A74C, #2AF598, #fecf7e, #f7e167, #fff );
+	background-size: 100%;
+	background-repeat: no-repeat;
 
-    background-blend-mode: soft-light;
+    /* transition: 1.5s; */
 }
 
 .main_container .problem_section {
     width: 65%;
-    /* border: 2px solid blue; */
     padding: 1.5rem;
 }
 
 .main_container .problem_section .header_section p {
     text-align: justify;
+    transition: 0s;
 }
 
 .main_container .problem_section .header_section span{
@@ -191,10 +200,7 @@ body{
 .diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem{
     display: flex;
     justify-content: space-between;
-
     border-radius: 0.5rem;
-    background: #7fdc82;
-
     margin: 0.5rem 0;
 }
 
@@ -227,6 +233,17 @@ body{
     outline: none;
 }
 
+.diffi_section .accordion-item .accordion-collapse .accordion-body .easy_box{
+    background: #49A74C;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .medium_box{
+    background: #ffbb02;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .hard_box{
+    background: #ff0000;
+}
 
 
 /* Footer section CSS */
@@ -234,21 +251,21 @@ body{
     display: flex;
     justify-content: space-between;
 
-    /* background: #eaf8d3; */
     background-image: url(./images/wave.svg);
     background-size: cover;
     color: #000000;
 
-    padding: 3rem;
-    gap: 2rem;
+    padding: 2rem 4rem;
+    transition: 1.5s;
 }
 
 .footer_section .footer_heading{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin: 1rem;
+    gap: 1.2rem;
+    margin: 2rem;
     width: 40%;
+    /* color: #000; */
 }
 
 .footer_section .footer_heading .footer_heading_image{
@@ -267,24 +284,12 @@ body{
 .footer_section .footer_heading .footer_heading_image .image img{
     height: 2.5rem;
     width: 2.5rem;
-
     border: 2px solid #000000;
     border-radius: 50%;
 }
 
-.footer_section .footer_heading .footer_heading_content h1{
-    /* color: #49A74C; */
-}
-
 .footer_section .footer_shortcuts{
     width: 30%;
-}
-
-.footer_section .footer_shortcuts .shortcut_links a{
-    text-decoration: none;
-    color: #000000;
-    font-weight: 500;
-    font-size: 1.1rem;
 }
 
 .footer_section .footer_shortcuts .shortcut_links{
@@ -300,10 +305,7 @@ body{
     flex-direction: column;
 
     margin: 2rem 0;
-}
-
-.footer_section .footer_shortcuts .social_icons .follow_us{
-    font-size: 2;
+    gap: 1.5rem;
 }
 
 .footer_section .footer_shortcuts .social_icons .icons{
@@ -312,13 +314,11 @@ body{
 }
 
 .footer_section .footer_shortcuts .social_icons .icons i{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .footer_section .footer_shortcuts .copyright{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    color: #444;
 }
