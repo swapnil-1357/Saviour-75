@@ -267,8 +267,8 @@ body {
 .diffi_section .accordion-item .accordion-collapse .accordion-body .hard_box {
     background: #ff0000;
 }
-/* stripe section */
 
+/* Stripes CSS Background */
 .diffi_section .accordion-item .accordion-collapse .accordion-body .revisit {
     background-image: linear-gradient(45deg, #17252a 25%, #2b7a78 25%, #2b7a78 50%, #17252a 50%, #17252a 75%, #2b7a78 75%, #2b7a78 100%);
     background-size: 30px 30px;
@@ -354,4 +354,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+
+/* media query */
+@media screen and (max-width: 1000px) {
+    .main_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main_container .problem_section {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 0;
+        visibility: hidden;
+    }
+
+    .diffi_section {
+        margin: 0;
+    }
+
+    .footer_section {
+        padding-bottom: 5rem;
+    }
 }
