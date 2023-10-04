@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
     transition: all 0.5s ease;
 }
 
@@ -13,7 +13,7 @@
 
 body {
     overflow-x: hidden;
-  }
+}
 
 /* Navbar Section CSS */
 .btn {
@@ -72,7 +72,7 @@ body {
     gap: 1.3rem;
 }
 
-.navbar-expand-lg .navbar-nav i{
+.navbar-expand-lg .navbar-nav i {
     font-size: 2rem;
     cursor: pointer;
     margin: auto;
@@ -85,13 +85,9 @@ body {
     padding: 4rem;
     gap: 3rem;
 
-    /* color: #80ffff; */
-
-    background: linear-gradient(to bottom, #49A74C, #2AF598, #fecf7e, #f7e167, #fff );
-	background-size: 100%;
-	background-repeat: no-repeat;
-
-    /* transition: 1.5s; */
+    background: linear-gradient(to bottom, #49A74C, #2AF598, #fecf7e, #f7e167, #fff);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .main_container .problem_section {
@@ -104,7 +100,7 @@ body {
     transition: 0s;
 }
 
-.main_container .problem_section .header_section span{
+.main_container .problem_section .header_section span {
     color: #fff;
 }
 
@@ -118,15 +114,15 @@ body {
     margin: 2rem 0;
 }
 
-.diffi_section h2{
+.diffi_section h2 {
     color: #49A74C;
 }
 
-.diffi_section h2 .med{
+.diffi_section h2 .med {
     color: #ffbe0b;
 }
 
-.diffi_section h2 .hard{
+.diffi_section h2 .hard {
     color: #ff0000;
 }
 
@@ -170,7 +166,6 @@ body {
     background: linear-gradient(to left, #f0f0f0, #ffbe0b);
 
     padding: 1.5rem;
-
 }
 
 .diffi_section .accordion-item .accordion-header .hard {
@@ -186,46 +181,51 @@ body {
 }
 
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .topic_headings{
+.diffi_section .accordion-item .accordion-collapse .accordion-body .topic_headings {
     display: flex;
     justify-content: space-between;
 }
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .topic_headings p{
+.diffi_section .accordion-item .accordion-collapse .accordion-body .topic_headings p {
     border: 2px solid #444;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem{
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem {
     display: flex;
     justify-content: space-between;
     border-radius: 0.5rem;
     margin: 0.5rem 0;
+
+    gap: 4rem;
 }
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem div{
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .temp {
+    display: flex;
+    justify-content: space-between;
+}
 
+
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem div {
+    padding: 0.5rem 0.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    gap: 1rem;
 }
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .problem_name{
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .problem_name {
     color: #fff;
     font-size: 1.2rem;
 }
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .problem_info a{
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .problem_info a {
     color: #fff;
     font-size: 1.5rem;
 }
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .action select{
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .action select {
     border-radius: 0.5rem;
     border: none;
     padding: 0.3rem;
@@ -233,16 +233,50 @@ body {
     outline: none;
 }
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .easy_box{
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .action {
+    background: repeating-linear-gradient(-45deg,
+            #f0f0f0,
+            #f0f0f0, 25%,
+            shade(#f0f0f0, 10%) 25%,
+            shade(#f0f0f0, 10%) 50%,
+            #f0f0f0, 50%) top left fixed;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem a {
+    text-decoration: none;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .temp .link a:hover {
+    border-bottom: 1px solid #fff;
+    transition: 0.05s ease-in-out;
+    scale: 1.03;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .each_problem .temp .problem_info .solution a:hover {
+    scale: 1.5;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .easy_box {
     background: #49A74C;
 }
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .medium_box{
+.diffi_section .accordion-item .accordion-collapse .accordion-body .medium_box {
     background: #ffbb02;
 }
 
-.diffi_section .accordion-item .accordion-collapse .accordion-body .hard_box{
+.diffi_section .accordion-item .accordion-collapse .accordion-body .hard_box {
     background: #ff0000;
+}
+/* stripe section */
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .revisit {
+    background-image: linear-gradient(45deg, #17252a 25%, #2b7a78 25%, #2b7a78 50%, #17252a 50%, #17252a 75%, #2b7a78 75%, #2b7a78 100%);
+    background-size: 30px 30px;
+}
+
+.diffi_section .accordion-item .accordion-collapse .accordion-body .done {
+    background-image: linear-gradient(45deg, #ff0bb6 25%, #17252a 25%, #17252a 50%, #ff0bb6 50%, #ff0bb6 75%, #17252a 75%, #17252a 100%);
+    background-size: 30px 30px;
 }
 
 
@@ -259,46 +293,45 @@ body {
     transition: 1.5s;
 }
 
-.footer_section .footer_heading{
+.footer_section .footer_heading {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     margin: 2rem;
     width: 40%;
-    /* color: #000; */
 }
 
-.footer_section .footer_heading .footer_heading_image{
+.footer_section .footer_heading .footer_heading_image {
     display: flex;
     gap: 0.4rem;
 }
 
-.footer_section .footer_heading .footer_heading_content{
+.footer_section .footer_heading .footer_heading_content {
     text-align: justify;
 }
 
-.footer_section .footer_heading .footer_heading_image .image{
+.footer_section .footer_heading .footer_heading_image .image {
     display: flex;
 }
 
-.footer_section .footer_heading .footer_heading_image .image img{
+.footer_section .footer_heading .footer_heading_image .image img {
     height: 2.5rem;
     width: 2.5rem;
     border: 2px solid #000000;
     border-radius: 50%;
 }
 
-.footer_section .footer_shortcuts{
+.footer_section .footer_shortcuts {
     width: 30%;
 }
 
-.footer_section .footer_shortcuts .shortcut_links{
+.footer_section .footer_shortcuts .shortcut_links {
     display: flex;
     justify-content: space-between;
     margin: 1.5rem 0;
 }
 
-.footer_section .footer_shortcuts .social_icons{
+.footer_section .footer_shortcuts .social_icons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,16 +341,16 @@ body {
     gap: 1.5rem;
 }
 
-.footer_section .footer_shortcuts .social_icons .icons{
+.footer_section .footer_shortcuts .social_icons .icons {
     display: flex;
     gap: 2rem;
 }
 
-.footer_section .footer_shortcuts .social_icons .icons i{
+.footer_section .footer_shortcuts .social_icons .icons i {
     font-size: 1.8rem;
 }
 
-.footer_section .footer_shortcuts .copyright{
+.footer_section .footer_shortcuts .copyright {
     display: flex;
     justify-content: center;
     align-items: center;
