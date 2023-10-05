@@ -38,7 +38,7 @@ toggle.addEventListener('click', function () {
 
         body.style.background = 'white';
         body.style.color = 'black';
-        body.style.transition = '1.5s'
+        body.style.transition = '1s'
     }
 
     else {
@@ -70,6 +70,6 @@ toggle.addEventListener('click', function () {
 
         body.style.background = '#180c40'
         body.style.color = 'white'
-        body.style.transition = '1.5s';
+        body.style.transition = '1s';
     }
 });
