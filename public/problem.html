@@ -18,12 +18,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <link rel="icon" type="image/x-icon" href="/images/binary-code.png">
+    <link rel="icon" type="image/x-icon" href="./images/binary-code.png">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
 
     <link rel="stylesheet" href="./problem.css">
 </head>
@@ -65,21 +68,36 @@
             <!-- Heading Section -->
             <div class="header_section">
                 <h1>Saviour 75 Sheet - <span>Top Coding Interview Problems</span></h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, laborum vitae quos cum sapiente minima
-                    iure praesentium consequatur architecto quibusdam suscipit ex blanditiis ipsum rem nesciunt enim,
-                    labore dolore! Accusamus ducimus harum voluptatem fuga excepturi neque. Architecto, veniam doloribus
-                    cumque est non omnis ut magnam, nobis nam accusantium laboriosam velit?
-                </p>
 
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod voluptatem fuga ad perspiciatis at
-                    corrupti veniam, ipsa perferendis iusto id, nam ullam, unde sint suscipit dolore quos vel iste vitae
-                    odio soluta eveniet! A, molestias enim. Deleniti fugiat modi inventore.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit facilis eligendi voluptates
-                    assumenda dolore aut repellendus sequi, animi et molestiae. Nesciunt accusantium nam ducimus ipsum
-                    officia accusamus autem voluptates laboriosam, at doloribus tempore numquam a ex quos repellat,
-                    alias veniam. Odit accusantium consectetur amet illum ut excepturi nulla? Accusamus, cum.
-                </p>
+                <div class="wrapper">
+
+                    <div class="card">
+                        <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                        </div>
+                        <div class="text">Easy</div>
+                    </div>
+
+                    <div class="card js">
+                        <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                        </div>
+                        <div class="text">Medium</div>
+                    </div>
+
+                    <div class="card react">
+                        <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                        </div>
+                        <div class="text">Hard</div>
+                    </div>
+
+                </div>
             </div>
+
 
             <!-- Difficulty Section -->
             <div class="diffi_section">
@@ -88,7 +106,7 @@
 
                 <div class="accordion" id="accordionPanelsStayOpenExample">
 
-                    <div class="accordion-item" data-aos="slide-left" data-aos-easing="ease-in-out">
+                    <div class="accordion-item" data-aos="slide-right" data-aos-easing="ease-in-out">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed easy" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
@@ -102,7 +120,7 @@
                         </div>
                     </div>
 
-                    <div class="accordion-item" data-aos="slide-left" data-aos-easing="ease-in-out">
+                    <div class="accordion-item" data-aos="slide-right" data-aos-easing="ease-in-out">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed medium" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
@@ -116,7 +134,7 @@
                         </div>
                     </div>
 
-                    <div class="accordion-item" data-aos="slide-left" data-aos-easing="ease-in-out">
+                    <div class="accordion-item" data-aos="slide-right" data-aos-easing="ease-in-out">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed hard" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
@@ -141,6 +159,16 @@
         </div>
 
         <div class="sidebar">
+
+            <div class="status_chart">
+                <div class="chart_heading">
+                    <h3>Progress Status</h3>
+                </div>
+                <div class="chart">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+
             <div class="sidebar_image">
                 <img src="./images/hero_image.svg" alt="logo">
             </div>
@@ -200,10 +228,149 @@
         crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
     <script>
         AOS.init({
             offset: 100,
             duration: 1500
+        });
+    </script>
+
+    <!-- Progress bar JS -->
+    <script>
+        // Function to create and initialize a circle progress element
+        function initializeCircleProgress(selector, value, fill) {
+            const defaultOptions = {
+                startAngle: -1.55,
+                size: 150,
+            };
+
+            const options = { ...defaultOptions, value, fill };
+
+            const element = $(selector);
+            if (!element.length) return;
+
+            element.circleProgress(options).on('circle-animation-progress', function (event, progress, stepValue) {
+                const $parent = $(this).parent();
+                const $span = $parent.find("span");
+
+                // Update the percentage text
+                $span.text(`${(stepValue * 100).toFixed(0)}%`);
+            });
+        }
+
+        var res = localStorage.getItem('every')
+        var everyRes = JSON.parse(res)
+
+        var easyArr = everyRes[0], mediumArr = everyRes[1], hardArr = everyRes[2]
+        var easyLen = easyArr.length, medLen = mediumArr.length, hardLen = hardArr.length
+
+        var easyDone = 0, medDone = 0, hardDone = 0
+        for (let i = 0; i < easyLen; i++) {
+            if (easyArr[i].status === 'done')
+                easyDone++
+        }
+        var easyValue = easyDone / easyLen
+
+        for (let i = 0; i < medLen; i++) {
+            if (mediumArr[i].status === 'done')
+                medDone++
+        }
+        var medValue = medDone / medLen
+
+        for (let i = 0; i < hardLen; i++) {
+            if (hardArr[i].status === 'done')
+                hardDone++
+        }
+        var hardValue = hardDone / hardLen
+
+
+        let circleOptions = [
+            {
+                className: ".circle",
+                value: easyValue,
+                fill: { gradient: ['#49A74C', '#64ff6a'] },
+            },
+            {
+                className: ".js",
+                value: medValue, // Set the value according to your logic
+                fill: { gradient: ['#ffbe0b', '#ffbe0b'] }, // Different fill colors
+            },
+            {
+                className: ".react",
+                value: hardValue, // Set the value according to your logic
+                fill: { gradient: ['#ff0000', '#f4a448'] }, // Different fill colors
+            }
+        ]
+
+        circleOptions.forEach((option) => {
+            const { className, value, fill } = option;
+            initializeCircleProgress(className + " .bar", value, fill);
+        })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+        var res = localStorage.getItem('every')
+        var everyRes = JSON.parse(res)
+
+        var easyArr = everyRes[0], mediumArr = everyRes[1], hardArr = everyRes[2]
+        var easyLen = easyArr.length, medLen = mediumArr.length, hardLen = hardArr.length
+
+        var pending = 0, revisit = 0, done = 0
+
+        
+        for (let i = 0; i < easyLen; i++) {
+            if (easyArr[i].status === 'pending')
+                pending++
+            else if(easyArr[i].status === 'revisit')
+                revisit++
+            else
+                done++
+        }
+
+        for (let i = 0; i < medLen; i++) {
+            if (mediumArr[i].status === 'pending')
+                pending++
+            else if (mediumArr[i].status === 'revisit')
+                revisit++
+            else
+                done++
+        }
+
+        for (let i = 0; i < hardLen; i++) {
+            if (hardArr[i].status === 'pending')
+                pending++
+            else if (hardArr[i].status === 'revisit')
+                revisit++
+            else
+                done++
+        }
+
+        const charDataSet = {
+            labels: ['Pending', 'Revisit', 'Done'],
+            data: [pending, revisit, done]
+        }
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: charDataSet.labels,
+                datasets: [{
+                    label: 'No =>',
+                    data: charDataSet.data,
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    hoverOffset: 6
+                }]
+            }
         });
     </script>
 

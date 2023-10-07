@@ -30,8 +30,6 @@ function loadData() {
         var res = localStorage.getItem('every')
         var everyRes = JSON.parse(res)
 
-        // console.log('Data found in local storage : ', everyRes)
-
         easyArr = everyRes[0]
         mediumArr = everyRes[1]
         hardArr = everyRes[2]
@@ -659,8 +657,6 @@ function loadData() {
 
         var every = JSON.stringify(all)
         localStorage.setItem('every', every)
-
-        // console.log('Data not found in local storage : setting in localstorage', every)
     }
 
 
@@ -854,8 +850,8 @@ window.onload = () => {
             // console.log(status)
 
             var parentDiv = event.target.closest('.each_problem')
-            console.log(parentDiv)
-            console.log(typeof (parentDiv))
+            // console.log(parentDiv)
+            // console.log(typeof (parentDiv))
 
             if (status === 'revisit') {
                 parentDiv.classList.remove('pending')
@@ -931,6 +927,71 @@ window.onload = () => {
                 var every = JSON.stringify(all)
                 localStorage.setItem('every', every)
             }
+
+
+            
+            // Chart JS Updates
+            var res = localStorage.getItem('every')
+            var everyRes = JSON.parse(res)
+
+            var easyArr = everyRes[0], mediumArr = everyRes[1], hardArr = everyRes[2]
+            var easyLen = easyArr.length, medLen = mediumArr.length, hardLen = hardArr.length
+
+            var pending = 0, revisit = 0, done = 0
+
+
+            for (let i = 0; i < easyLen; i++) {
+                if (easyArr[i].status === 'pending')
+                    pending++
+                else if (easyArr[i].status === 'revisit')
+                    revisit++
+                else
+                    done++
+            }
+
+            for (let i = 0; i < medLen; i++) {
+                if (mediumArr[i].status === 'pending')
+                    pending++
+                else if (mediumArr[i].status === 'revisit')
+                    revisit++
+                else
+                    done++
+            }
+
+            for (let i = 0; i < hardLen; i++) {
+                if (hardArr[i].status === 'pending')
+                    pending++
+                else if (hardArr[i].status === 'revisit')
+                    revisit++
+                else
+                    done++
+            }
+
+            // console.log(done, pending, revisit)
+
+            const charDataSet = {
+                labels: ['Pending', 'Revisit', 'Done'],
+                data: [pending, revisit, done]
+            }
+
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: charDataSet.labels,
+                    datasets: [{
+                        label: 'No =>',
+                        data: charDataSet.data,
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)'
+                        ],
+                        hoverOffset: 6
+                    }]
+                }
+            });
         })
     })
 }

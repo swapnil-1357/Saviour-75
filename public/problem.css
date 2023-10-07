@@ -95,12 +95,151 @@ body {
     padding: 1.5rem;
 }
 
-.main_container .problem_section .header_section p {
-    text-align: justify;
-    transition: 0s;
+.main_container .problem_section .header_section .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.main_container .problem_section .header_section span {
+.main_container .problem_section .header_section .wrapper .card {
+    background: #fff;
+    width: calc(33% - 20px);
+    height: 300px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main_container .problem_section .header_section .wrapper .card .circle {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    cursor: default;
+}
+
+.main_container .problem_section .header_section .wrapper .card .circle .box,
+.main_container .problem_section .header_section .wrapper .card .circle .box span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.main_container .problem_section .header_section .wrapper .card .circle .box {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: all 0.2s;
+}
+
+/*  */
+
+.main_container .problem_section .header_section .wrapper .card .circle:hover .box {
+    transform: translate(-50%, -50%) scale(0.91);
+}
+
+.main_container .problem_section .header_section .wrapper .card .circle .box {
+
+    background: rgb(55, 40, 2);
+    background: linear-gradient(167deg, rgb(2, 55, 2) 0%, #48f954 50%, #e7e7e7 100%);
+}
+
+.main_container .problem_section .header_section .wrapper .js .circle .box {
+    background: rgb(55, 40, 2);
+    background: linear-gradient(167deg, rgba(55, 40, 2, 1) 0%, rgba(255, 189, 8, 1) 50%, #e7e7e7 100%);
+}
+
+.main_container .problem_section .header_section .wrapper .react .circle .box {
+    background: rgb(55, 40, 2);
+    background: linear-gradient(167deg, rgb(75, 10, 3) 0%, rgb(255, 82, 8) 50%, #e7e7e7 100%);
+}
+
+.main_container .problem_section .header_section .wrapper .card .circle .box span,
+.main_container .problem_section .header_section .wrapper .card .text {
+    background: -webkit-linear-gradient(left, #49A74C, #49A74C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main_container .problem_section .header_section .wrapper .js .circle .box span,
+.main_container .problem_section .header_section .wrapper .js .text {
+    background: -webkit-linear-gradient(left, #ffbb02, #ffbb02);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main_container .problem_section .header_section .wrapper .react .circle .box span,
+.main_container .problem_section .header_section .wrapper .react .text {
+    background: -webkit-linear-gradient(left, #ff0000, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.main_container .problem_section .header_section .wrapper .card .circle .box span {
+    font-size: 3rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    transform: translate(-45%, -45%);
+    transition: all 0.1s;
+}
+
+.main_container .problem_section .header_section .wrapper .card .circle:hover .box span {
+    transform: translate(-45%, -45%) scale(1.09);
+}
+
+.main_container .problem_section .header_section .wrapper .card .circle .box span {
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    background: -webkit-linear-gradient(left, #fff, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main_container .problem_section .header_section .wrapper .card .text {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.main_container .problem_section .header_section .wrapper .card {
+    background: #f8f8f8dd;
+    cursor: pointer;
+    border-radius: 0.95rem;
+}
+
+
+@media(max-width: 753px) {
+    .main_container .problem_section .header_section .wrapper {
+        max-width: 700px;
+    }
+
+    .main_container .problem_section .header_section .wrapper .card {
+        width: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 505px) {
+    .main_container .problem_section .header_section .wrapper {
+        max-width: 500px;
+    }
+
+    .main_container .problem_section .header_section .wrapper .card {
+        width: 100%;
+    }
+}
+
+
+/* -------- PROGRESS BAR CSS ENDS HERE ------- */
+
+.main_container .problem_section .header_section h1 span {
     color: #fff;
 }
 
@@ -108,6 +247,26 @@ body {
     width: 35%;
 }
 
+.main_container .sidebar .status_chart{
+    margin-top: 8rem;
+    padding: 2rem 4rem;
+    background: #fff;
+    border-radius: 1rem;
+
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.main_container .sidebar .status_chart .chart_heading{
+    margin: auto;
+}
+
+
+.main_container .sidebar .status_chart .chart canvas{
+    height: 15rem;
+    width: 15rem;
+}
 
 /* Difficulty Section */
 .diffi_section {
