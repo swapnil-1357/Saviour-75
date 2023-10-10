@@ -7,6 +7,9 @@
 
     <title>Problems</title>
 
+    <!-- SWEET ALERT STYLE SHEET -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,6 +232,7 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
+    <!-- AOS plugin -->
     <script>
         AOS.init({
             offset: 100,
@@ -236,7 +240,7 @@
         });
     </script>
 
-    <!-- Progress bar JS -->
+    <!-- EASY-MED-HARD % JS -->
     <script>
         // Function to create and initialize a circle progress element
         function initializeCircleProgress(selector, value, fill) {
@@ -311,8 +315,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- CHART JS  -->
     <script>
-
         var res = localStorage.getItem('every')
         var everyRes = JSON.parse(res)
 
@@ -321,11 +325,11 @@
 
         var pending = 0, revisit = 0, done = 0
 
-        
+
         for (let i = 0; i < easyLen; i++) {
             if (easyArr[i].status === 'pending')
                 pending++
-            else if(easyArr[i].status === 'revisit')
+            else if (easyArr[i].status === 'revisit')
                 revisit++
             else
                 done++
@@ -376,6 +380,12 @@
 
     <script src="./script.js"></script>
     <script src="./problemDarkmode.js"></script>
+
+    <!-- Sweet Alert CDN -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
+
+
 </body>
 
 </html>

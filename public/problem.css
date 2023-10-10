@@ -23,6 +23,30 @@ body {
     border: none;
 }
 
+.colored-toast.swal2-icon-success {
+    background-color: #49A74C !important;
+}
+
+.colored-toast.swal2-icon-warning {
+    background-color: #ff0000 !important;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: #49A74C !important;
+}
+
+.colored-toast .swal2-title {
+    color: white;
+}
+
+.colored-toast .swal2-close {
+    color: white;
+}
+
+.colored-toast .swal2-html-container {
+    color: white;
+}
+
 
 .mybutton {
     outline: 2px solid #49A74C;

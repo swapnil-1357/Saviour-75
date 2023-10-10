@@ -835,6 +835,7 @@ function loadData() {
 }
 
 
+
 window.onload = () => {
     loadData()
 
@@ -844,22 +845,46 @@ window.onload = () => {
     let selectElements = document.querySelectorAll('.select-status')
 
 
+
     selectElements.forEach((elem) => {
         elem.addEventListener('change', (event) => {
-            var status = elem.value
-            // console.log(status)
 
+            var status = elem.value
             var parentDiv = event.target.closest('.each_problem')
-            // console.log(parentDiv)
-            // console.log(typeof (parentDiv))
+
+            const Toast = Swal.mixin({
+                toast: true,
+                iconColor: 'white',
+                position: 'top-end',
+                showConfirmButton: false,
+                customClass: {
+                    popup: 'colored-toast'
+                },
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
 
             if (status === 'revisit') {
+                Toast.fire({
+                    icon: 'warning',
+                    title: 'Marked Revisited !!!'
+                })
+
                 parentDiv.classList.remove('pending')
                 parentDiv.classList.remove('done')
                 parentDiv.classList.add('revisit')
             }
 
             else if (status === 'done') {
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Problem Done !!!'
+                })
                 parentDiv.classList.remove('revisit')
                 parentDiv.classList.remove('pending')
                 parentDiv.classList.add('done')
@@ -927,71 +952,6 @@ window.onload = () => {
                 var every = JSON.stringify(all)
                 localStorage.setItem('every', every)
             }
-
-
-            
-            // Chart JS Updates
-            var res = localStorage.getItem('every')
-            var everyRes = JSON.parse(res)
-
-            var easyArr = everyRes[0], mediumArr = everyRes[1], hardArr = everyRes[2]
-            var easyLen = easyArr.length, medLen = mediumArr.length, hardLen = hardArr.length
-
-            var pending = 0, revisit = 0, done = 0
-
-
-            for (let i = 0; i < easyLen; i++) {
-                if (easyArr[i].status === 'pending')
-                    pending++
-                else if (easyArr[i].status === 'revisit')
-                    revisit++
-                else
-                    done++
-            }
-
-            for (let i = 0; i < medLen; i++) {
-                if (mediumArr[i].status === 'pending')
-                    pending++
-                else if (mediumArr[i].status === 'revisit')
-                    revisit++
-                else
-                    done++
-            }
-
-            for (let i = 0; i < hardLen; i++) {
-                if (hardArr[i].status === 'pending')
-                    pending++
-                else if (hardArr[i].status === 'revisit')
-                    revisit++
-                else
-                    done++
-            }
-
-            // console.log(done, pending, revisit)
-
-            const charDataSet = {
-                labels: ['Pending', 'Revisit', 'Done'],
-                data: [pending, revisit, done]
-            }
-
-            const ctx = document.getElementById('myChart');
-
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: charDataSet.labels,
-                    datasets: [{
-                        label: 'No =>',
-                        data: charDataSet.data,
-                        backgroundColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(54, 162, 235)',
-                            'rgb(255, 205, 86)'
-                        ],
-                        hoverOffset: 6
-                    }]
-                }
-            });
         })
     })
 }
