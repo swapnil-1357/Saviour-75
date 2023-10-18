@@ -274,7 +274,7 @@ body {
 .main_container .sidebar .status_chart{
     margin-top: 8rem;
     padding: 2rem 4rem;
-    background: #fff;
+    background:#fff;
     border-radius: 1rem;
 
     display: flex;
@@ -282,14 +282,19 @@ body {
     justify-content: space-between;
 }
 
+
 .main_container .sidebar .status_chart .chart_heading{
     margin: auto;
+}
+.main_container .sidebar .status_chart .chart_heading h3 {
+    color: #000000;
 }
 
 
 .main_container .sidebar .status_chart .chart canvas{
     height: 15rem;
     width: 15rem;
+    color: #000000;
 }
 
 /* Difficulty Section */
@@ -530,7 +535,13 @@ body {
 }
 
 .footer_section .footer_shortcuts .social_icons .icons i {
-    font-size: 1.8rem;
+    font-size: 2rem;
+}
+a {
+    text-decoration: none !important;
+    color: inherit;
+    font-size: 2rem;
+    
 }
 
 .footer_section .footer_shortcuts .copyright {

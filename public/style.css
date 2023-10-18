@@ -170,7 +170,6 @@ body {
     display: flex;
     padding: 2rem 2rem 2rem 6rem;
 }
-
 .hero_section .hero_content {
     width: 60%;
     margin: auto;
@@ -309,6 +308,10 @@ body {
     transition: transform 0.3s ease-in-out;
     z-index: -1;
 }
+a{
+text-decoration: none !important;
+color:  inherit;;
+}
 
 .service_section .services .service_box:hover::before {
     transform: scaleX(1);
@@ -377,6 +380,7 @@ body {
     background-image: url(./images/wave.svg);
     background-size: cover;
     color: #fff;
+    text-decoration: none;
 
     padding: 4.5rem;
     gap: 3rem;
@@ -388,7 +392,6 @@ body {
 }
 
 .footer_section .shortcut_links a {
-    text-decoration: none;
     color: #fff;
     font-size: 1.3rem;
 }
@@ -397,12 +400,16 @@ body {
     display: flex;
     gap: 2rem;
     font-size: 1.85rem;
+    text-decoration: none;
+    color: #fff;
 }
 
 .footer_section .social_icons i:hover {
     scale: 1.3;
+    text-decoration: none;
     transition: 0.25s ease-in-out;
     cursor: pointer;
+
 }
 
 

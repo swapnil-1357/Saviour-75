@@ -15,13 +15,14 @@ toggle.addEventListener('click', function () {
 
         const mainContainer = document.querySelector('.main_container')
         mainContainer.style.background = 'linear-gradient(to bottom, #49A74C, #2AF598, #fecf7e, #f7e167, #fff)'
+        mainContainer.style.color = 'black'
         mainContainer.transition = '1.5s'
 
         const links = document.querySelectorAll('.nav-link')
         links.forEach(e => e.style.color = "black")
 
         const foot = document.querySelector('.footer_section')
-        foot.style.background = ''
+        foot.style.background = 'white'
         foot.style.color = 'black'
         foot.transition = '1.5s'
 
